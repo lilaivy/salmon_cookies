@@ -5,7 +5,6 @@
 
 // var CookieStore = function(){       //used a constructor so capitilized Cookie
 //     var location, min, max, average;
-//     return colsole.dir (this);
 // };
 
 
