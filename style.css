@@ -1,5 +1,16 @@
 body{
     font-family: Helvetica;
     text-align: center;
+    background: rgb(209, 201,183);
     
+}
+
+#storeLocations ul{
+list-style: none;
+
+}
+
+#storeLocations li{
+    display: inline-block;
+    color: rgb(240,217,210);
 }

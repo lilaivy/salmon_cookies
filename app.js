@@ -71,14 +71,23 @@ capitolHill.dailyProjection();
 alki.dailyProjection();
 
 
+var render = function(){
+  var table = document.getElementById('dailyProjections');
+  var blankRow = document.createElement('tr');
+  blankRow.textContent = ' ';
+  table.appendChild('tr');
+};
+
+render ();
+
 var hours = ['','6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ', '1pm: ', '2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ','8pm: ', 'Daily Total'];
 var headerRow = function(){
   for(var i = 0; i < hours.length; i++){
 
-    var table = document.getElementById('dailyProjections');
-    var newTh = document.createElement('th');
-    newTh.textContent = hours[i]; //surround something with parseInt it rounds the number up.
-    table.appendChild(newTh);
+    // var table = document.getElementById('dailyProjections');
+    var headerTh = document.createElement('th');
+    headerTh.textContent = hours[i]; //surround something with parseInt it rounds the number up.
+    blankRow.appendChild(headerTh);
   }
 };
 headerRow();
