@@ -1,13 +1,5 @@
 'use strict';
 
-// var CookiesPerDay = function() //this function will generate a random number to help calulate a random number and customers per hour
-
-
-// var CookieStore = function(){       //used a constructor so capitilized Cookie
-//     var location, min, max, average;
-// };
-
-
 
 
 var Store = function(storeName, storeLocation, minCookiesPerCustomer, maxCookiesPerCustomer, avgCookiesPurchased){
@@ -31,24 +23,31 @@ Store.prototype.cookiesPerHour = function(){ //avg number of cookies sold per ho
 
 
 Store.prototype.dailyProjection = function(){   //change the name to projections.
-  for(var i = 1; i < (this.hours.length - 1); i++){  //looping through cookies sold per hour and storing it in the empty array called cookiesArray
+  for(var i = 0; i < (this.hours.length - 1); i++){  //looping through cookies sold per hour and storing it in the empty array called cookiesArray
     this.cookiesArray.push(this.cookiesPerHour());
-
-    var table = document.getElementById('dailyProjections');
-    var newTableData = document.createElement('td');
-    newTableData.textContent = parseInt(this.cookiesArray[i - 1]) + ' cookies'; //surround something with parseInt it rounds the number up.
-    table.appendChild(newTableData);
-
-  }
-  var total = 0;
-  for(i = 0; i < this.cookiesArray.length; i++){
-    total = total + this.cookiesArray[i];
-  }
-
-  newTableData.textContent = 'Total: ' + parseInt(total) + ' cookies'; //surround something with parseInt it rounds the number up.
-  table.appendChild(newTableData);
-  console.log (parseInt(total));
+  };
 };
+Store.prototype.renderTableData = function(){
+  var tableElement = document.getElementById('dailyProjections');
+  var tableDataRow = document.createElement('tr');
+  var storeNameRow = document.createElement('th');
+  storeNameRow.textContent = this.name;
+  tableElement.appendChild(tableDataRow);
+  tableDataRow.appendChild(storeNameRow);
+
+  for(var i = 0; i < this.cookiesArray.length; i++){
+    var newTableData = document.createElement('td');
+    newTableData.textContent = parseInt(this.cookiesArray[i]); //surround something with parseInt it rounds the number up.
+    tableDataRow.appendChild(newTableData);
+  };
+
+};
+// var total = 0;
+// for(var i = 0; i < this.cookiesArray.length; i++){
+//   total = total + this.cookiesArray[i];
+// }
+
+
 
 
 //using keyword NEW to construct new objects.
@@ -71,15 +70,24 @@ capitolHill.dailyProjection();
 alki.dailyProjection();
 
 
+
+
+
 var hours = ['','6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ', '1pm: ', '2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ','8pm: ', 'Daily Total'];
-var headerRow = function(){
+var tableElement = document.getElementById('dailyProjections');
+
+var renderHeader = function(){
+  var headerRow = document.createElement('tr');
+  tableElement.appendChild(headerRow);
+
   for(var i = 0; i < hours.length; i++){
 
-    var table = document.getElementById('dailyProjections');
-    var newTh = document.createElement('th');
-    newTh.textContent = hours[i]; //surround something with parseInt it rounds the number up.
-    table.appendChild(newTh);
+    var headerTh = document.createElement('th');
+    headerTh.textContent = hours[i]; //surround something with parseInt it rounds the number up.
+    headerRow.appendChild(headerTh);
   }
 };
-headerRow();
+renderHeader();
+
+
 
