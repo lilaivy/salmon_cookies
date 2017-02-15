@@ -13,7 +13,7 @@
 var Store = function(storeName, storeLocation, minCookiesPerCustomer, maxCookiesPerCustomer, avgCookiesPurchased){
   this.name = storeName;
   this.location = storeLocation;
-  this.hours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ', '1pm: ', '2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ','8pm: '];
+  this.hours = ['','6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ', '1pm: ', '2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ','8pm: '];
   this.minCookies = minCookiesPerCustomer;
   this.maxCookies = maxCookiesPerCustomer;
   this.avgCookiesPurchased = avgCookiesPurchased;
@@ -31,13 +31,13 @@ Store.prototype.cookiesPerHour = function(){ //avg number of cookies sold per ho
 
 
 Store.prototype.dailyProjection = function(){   //change the name to projections.
-  for(var i = 0; i < this.hours.length; i++){  //looping through cookies sold per hour and storing it in the empty array called cookiesArray
+  for(var i = 1; i < (this.hours.length - 1); i++){  //looping through cookies sold per hour and storing it in the empty array called cookiesArray
     this.cookiesArray.push(this.cookiesPerHour());
 
-    var ul = document.getElementById('projectionsPike');
-    var pikeLi = document.createElement('li');
-    pikeLi.textContent = this.hours[i] + parseInt(this.cookiesArray[i]) + ' cookies'; //surround something with parseInt it rounds the number up.
-    ul.appendChild(pikeLi);
+    var table = document.getElementById('dailyProjections');
+    var newTableData = document.createElement('td');
+    newTableData.textContent = parseInt(this.cookiesArray[i - 1]) + ' cookies'; //surround something with parseInt it rounds the number up.
+    table.appendChild(newTableData);
 
   }
   var total = 0;
@@ -45,8 +45,8 @@ Store.prototype.dailyProjection = function(){   //change the name to projections
     total = total + this.cookiesArray[i];
   }
 
-  pikeLi.textContent = 'Total: ' + parseInt(total) + ' cookies'; //surround something with parseInt it rounds the number up.
-  ul.appendChild(pikeLi);
+  newTableData.textContent = 'Total: ' + parseInt(total) + ' cookies'; //surround something with parseInt it rounds the number up.
+  table.appendChild(newTableData);
   console.log (parseInt(total));
 };
 
@@ -71,5 +71,15 @@ capitolHill.dailyProjection();
 alki.dailyProjection();
 
 
+var hours = ['','6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ', '1pm: ', '2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ','8pm: ', 'Daily Total'];
+var headerRow = function(){
+  for(var i = 0; i < hours.length; i++){
 
+    var table = document.getElementById('dailyProjections');
+    var newTh = document.createElement('th');
+    newTh.textContent = hours[i]; //surround something with parseInt it rounds the number up.
+    table.appendChild(newTh);
+  }
+};
+headerRow();
 
