@@ -79,7 +79,7 @@ function submitHandler(event){
   console.log(avgCookiesPurchased);
 
   var newStoreInstance = new Store(storeName, storeName, minCookiesPerCustomer, maxCookiesPerCustomer, avgCookiesPurchased) ;
-  newStoreInstance.dailyProjection();
+  newStoreInstance.dailyProjection(); //you must call the function in the for loop so it runs with every new instance
   newStoreInstance.renderTableData();
   console.log(newStoreInstance);
 };
