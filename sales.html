@@ -1,22 +1,22 @@
 <!DOCTYPE html</>
 <html>
     <head>
-        <title>Salmon Cookies Home Page</title>
+        <title>Salmon Cookies Sales Projections</title>
         <link href = "style.css" rel = "stylesheet"
     </head>
     <body>
-        <h1>Salmon Cookies Home Page</h1>
-        <p>Welcome to the Salmon Cookies home page, Seattle's premier coffee confection!</p>
-        <h1>Pike Place Projections:</h1>
-
+        <h1>Salmon Cookies Daily Sales Projections By Location:</h1>
+      
+        
         <table id = 'dailyProjections'></table>
         <div>
+              <p>Add new store location by submitting the fields below: </p>
                 <form id ="new_store">
-<input name = "new_storeName" placeholder = "New Store Name Here:" type = "text">
-<input name = "new_minCookiesPerCustomer" placeholder = "Min Cookies" type = "test">
-<input name = "max_CookiesPerCustomer" placeholder = "Max Cookies" type = "text">
-<input name = "new_avgCookiesPerCustomer" placeholder = "avg Cookies" type = "text">
-<input name = "submitName" type = "submit">
+<input required name = "new_storeName" placeholder = "New Store Name Here:" type = "text">
+<input required name = "new_minCookiesPerCustomer" placeholder = "Min Cookies" type = "number" min = "0" >
+<input required name = "max_CookiesPerCustomer" placeholder = "Max Cookies" type = "number" min = "0">
+<input required name = "new_avgCookiesPerCustomer" placeholder = "avg Cookies" type = "number" min = "0">
+<input required name = "submitName" type = "submit">
             </form>
             </div>
         <script type = "text/javascript" src = "app.js" ></script>
