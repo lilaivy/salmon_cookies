@@ -1,0 +1,16 @@
+DAY 8 CLASS NOTES:  FORMS
+
+- user Input
+- enter text
+- the have methods & URLS (side functionality so that forms can communicate with the server, but we won't mess with this)
+- inputs(tag name) go in forms....self closing
+- inputs have types, have to set type
+- we submit forms, a form will have something that triggers turning over all this information
+
+
+<form>
+<input type ="text"> 
+<input type = "select">
+<input type = "radio">
+<input type = "select">
+</form>
