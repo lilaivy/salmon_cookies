@@ -18,16 +18,23 @@ Store.prototype.customersPerHour = function(){
 };
 
 //calculates the avg number of cookies sold in the store per hour
-Store.prototype.cookiesPerHour = function(){ 
+Store.prototype.cookiesPerHour = function(){
   return this.avgCookiesPurchased * this.customersPerHour();
 };
 
 
-Store.prototype.dailyProjection = function(){   
+Store.prototype.dailyProjection = function(){
   for(var i = 0; i < (this.hours.length - 1); i++){  //loops through cookies sold per hour and storing it in the empty array called cookiesArray
     this.cookiesArray.push(this.cookiesPerHour());
-  };
+  }
+  // // var total = 0;
+  // // for(var j = 0; j < this.cookiesArray.length - 1; j++){
+  // //   total = total + this.cookiesArray[j];
+  // //   console.log('added totals');
+  // }
 };
+
+
 
 //fetches table element in html, creates text for new node, and appends new node onto table element for each hour of cookie sales at each store
 Store.prototype.renderTableData = function(){
@@ -45,11 +52,6 @@ Store.prototype.renderTableData = function(){
   };
 
 };
-// var total = 0;
-// for(var i = 0; i < this.cookiesArray.length; i++){
-//   total = total + this.cookiesArray[i];
-// }
-
 
 //using keyword NEW to construct new objects.
 var pike = new Store ('Pike', '1st and Pike', 23, 65, 6.3);
@@ -70,9 +72,9 @@ this.newStoreFormArray = [];
 function submitHandler(event){
   event.preventDefault();
   var storeName = event.target.new_storeName.value;
-  var minCookiesPerCustomer = event.target.new_minCookiesPerCustomer.value;
-  var maxCookiesPerCustomer = event.target.max_CookiesPerCustomer.value;
-  var avgCookiesPurchased = event.target.new_avgCookiesPerCustomer.value;
+  var minCookiesPerCustomer = parseInt(event.target.new_minCookiesPerCustomer.value);
+  var maxCookiesPerCustomer = parseInt(event.target.max_CookiesPerCustomer.value);
+  var avgCookiesPurchased = parseInt(event.target.new_avgCookiesPerCustomer.value);
   console.log(storeName);
   console.log(minCookiesPerCustomer);
   console.log(maxCookiesPerCustomer);

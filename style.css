@@ -1,3 +1,14 @@
+.SiteTitle{
+width:200px; 
+   height:200px;
+   border-radius:150px;
+   background-color:#333;
+   padding: 50px;
+   text-align: center;
+   letter-spacing: 5px;
+
+}
+
 body{
     font-family: Helvetica;
     text-align: center;
