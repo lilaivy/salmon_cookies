@@ -10,6 +10,7 @@ var Store = function(storeName, storeLocation, minCookiesPerCustomer, maxCookies
   this.maxCookies = maxCookiesPerCustomer;
   this.avgCookiesPurchased = avgCookiesPurchased;
   this.cookiesArray = [];
+  this.dailyTotalsArray = [];
 };
 
 //calculates random customers per hour at each store
@@ -24,19 +25,19 @@ Store.prototype.cookiesPerHour = function(){
 
 
 Store.prototype.dailyProjection = function(){
+  this.total = 0;
+  var hourlyCookies;
   for(var i = 0; i < (this.hours.length - 1); i++){  //loops through cookies sold per hour and storing it in the empty array called cookiesArray
-    this.cookiesArray.push(this.cookiesPerHour());
+    hourlyCookies = this.cookiesPerHour();
+    this.cookiesArray.push(hourlyCookies);
+    this.total = this.total + hourlyCookies;
+    console.log('total', this.total);
+    console.log(hourlyCookies);
   }
-  // // var total = 0;
-  // // for(var j = 0; j < this.cookiesArray.length - 1; j++){
-  // //   total = total + this.cookiesArray[j];
-  // //   console.log('added totals');
-  // }
+
 };
 
-
-
-//fetches table element in html, creates text for new node, and appends new node onto table element for each hour of cookie sales at each store
+//fetches table element in html, creates text for new node, and appends new node onto table element for store name.
 Store.prototype.renderTableData = function(){
   var tableElement = document.getElementById('dailyProjections');
   var tableDataRow = document.createElement('tr');
@@ -45,12 +46,15 @@ Store.prototype.renderTableData = function(){
   tableElement.appendChild(tableDataRow);
   tableDataRow.appendChild(storeNameRow);
 
+  //incorporates store sales data into table
   for(var i = 0; i < this.cookiesArray.length; i++){
     var newTableData = document.createElement('td');
     newTableData.textContent = parseInt(this.cookiesArray[i]); //surround something with parseInt it rounds the number up.
     tableDataRow.appendChild(newTableData);
   };
-
+  var storeTotalsColumn = document.createElement ('td');
+  storeTotalsColumn.textContent = parseInt(this.total);
+  tableDataRow.appendChild(storeTotalsColumn);
 };
 
 //using keyword NEW to construct new objects.
@@ -97,7 +101,7 @@ alki.dailyProjection();
 
 
 //creats new row in table to insert cookies per hour header
-var hours = ['','6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ', '1pm: ', '2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ','8pm: ', 'Daily Total'];
+var hours = ['','6am ','7am: ','8am ','9am ','10am: ','11am: ','12pm ', '1pm ', '2pm ','3pm ','4pm ','5pm ','6pm ', '7pm ','8pm ', 'Daily Totals'];
 var tableElement = document.getElementById('dailyProjections');
 
 var renderHeader = function(){
@@ -116,5 +120,14 @@ seattleCenter.renderTableData();
 capitolHill.renderTableData();
 alki.renderTableData();
 
-
-
+var footerHours = ['Daily Total','',' ',' ',' ',' ',' ',' ', ' ', ' ',' ','','',' ', ' ',' ', ''];
+var renderFooter = function(){
+  var footerRow = document.createElement('tr');
+  tableElement.appendChild(footerRow);
+  for(var i = 0; i < footerHours.length; i++){
+    var footerTh = document.createElement('th');
+    footerTh.textContent = footerHours[i]; //surround something with parseInt it rounds the number up.
+    footerRow.appendChild(footerTh);
+  }
+};
+renderFooter();
