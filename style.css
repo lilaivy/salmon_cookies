@@ -7,10 +7,25 @@ width:200px;
    padding: 50px;
    text-align: center;
    letter-spacing: 5px;
-   color: lightgray
+
+  color:lightgray;
+}
+
+.story_title{
+     line-height: 55px;
+width:200px; 
+   height:200px;
+   border-radius:150px;
+   background-color:#333;
+   padding: 50px;
+   text-align: center;
+   letter-spacing: 5px;
+  color:lightgray;
+}
+
+
    
 
-}
 
 body{
     font-family: Helvetica;
@@ -18,18 +33,105 @@ body{
     background: rgb(209, 201,183); 
 }
 
+
+.about_pete{
+    width:600px;
+    padding:10px;
+    box-sizing:border-box;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 20px;
+    float:clear;
+}
+
+#nav_bar ul{
+list-style: none;
+float:center;
+word-spacing: 20px;
+border: solid, rgb(117,101,53);
+text-decoration:none;
+}
+
+#nav_bar li {
+    display: inline-block;
+    color: rgb(141,118,108);
+    font-size: 30px;
+    text-decoration:none;
+}
+
+#nav_bar_about ul{
+list-style: none;
+float:center;
+word-spacing: 20px;
+border: solid, rgb(117,101,53);
+text-decoration:none;
+    }
+
+#nav_bar_about li{
+    display: inline-block;
+    color: rgb(141,118,108);
+    font-size: 30px;
+}
+
+#nav_footer ul{
+list-style: none;
+float:center;
+word-spacing: 10px;
+border: solid, rgb(117,101,53);
+text-decoration:none;
+font-size:10px;
+
+}
+
+#nav_footer li{
+    display: inline-block;
+    color: rgb(141,118,108);
+    font-size: 30px;
+}
+
 #storeLocations ul{
 list-style: none;
+
 
 }
 
 #storeLocations li{
     display: inline-block;
-    color: rgb(240,217,210);
+    color: rgb(141,118,108);
+    font-size: 30px;
+    
     
 }
+ 
+ #kid-drawing{
+     width:600px;
+    box-sizing:border-box;
+ }
+
+ #family_pic{
+  width: 800x;
+  margin: 0 auto; 
+   box-sizing:content-box;
+   float:right;
 
 
-table.altrowstable {
-border: 5px, solid black;
+ }
+
+
+table {
+border: 15px, solid black;
+}
+
+.social_media{
+padding-top: 50px;
+transform: scale(1.3,1.3);
+}
+
+img.resize{
+   width:200px;
+   height:40px;
+}
+
+.merch_pics{
+  margin: 0,10px;
 }

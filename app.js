@@ -120,7 +120,7 @@ seattleCenter.renderTableData();
 capitolHill.renderTableData();
 alki.renderTableData();
 
-var footerHours = ['Daily Total','',' ',' ',' ',' ',' ',' ', ' ', ' ',' ','','',' ', ' ',' ', ''];
+var footerHours = ['Hourly Total','',' ',' ',' ',' ',' ',' ', ' ', ' ',' ','','',' ', ' ',' ', ''];
 var renderFooter = function(){
   var footerRow = document.createElement('tr');
   tableElement.appendChild(footerRow);
