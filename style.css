@@ -1,4 +1,48 @@
-.SiteTitle{
+table{
+    border: 1px solid rgb(255,93,91);
+    width: 800px;
+    font-family: Georgia, serif;
+}
+
+th, td{
+    padding: 7px 10px 10px 10px;
+}
+
+th{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: left;
+    border-bottom: 2px solid rgb(255,93,91);
+    border-top: 1px solid rgb(255,93,91);
+}
+
+tr.even{
+    background-color:lightgrey;
+}
+
+tr.hover{
+    background-color:darkgray;
+}
+
+.container{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+
+body{
+    width:90%;
+    margin:0 auto;
+    background-color: rgb(197,184, 154);
+    font-family:'Railway', sans-serif;
+    text-align: center;
+    margin:0 auto;
+    color:rgb(51,51,51);
+}
+
+.site_title{
+line-height: 55px;
 width:200px; 
    height:200px;
    border-radius:150px;
@@ -6,27 +50,93 @@ width:200px;
    padding: 50px;
    text-align: center;
    letter-spacing: 5px;
+  color:lightgray;
+  float: left;
+}
+
+img{
+    max-width: 100%;
+}
+
+nav{
+    text-decoration: none;
+    color:rgb(255,93,91);
+    display:inline-block;
+    font-size: 35px;
+    letter-spacing: 10px;
+   
+}
+
+a{
+    text-decoration:none;
+    color:rgb(255,93,91);
+    display:inline-block;
 
 }
 
-body{
-    font-family: Helvetica;
-    text-align: center;
-    background: rgb(209, 201,183); 
+ul{
+    text-decoration:none;
+    color:rgb(255,93,91);
+    display:inline-block;
 }
 
-#storeLocations ul{
-list-style: none;
 
+ li{
+  text-decoration:none;
+    color:rgb(255,93,91);
+    display:inline-block;
+     border-left:solid rgb(255,93,91);
+     padding-left: 10px;
 }
 
-#storeLocations li{
+li:first-child{
+    border-left:none;
+}
+
+img{
+    float:clear;
+}
+
+
+p:first-letter{
+    font-size: 200%;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.store_pics:{
+    float:center;
+}
+
+
+.visit_store{
+    text-indent: 10px;
+    float:center;
+}
+
+#nav_footer li{    
+    color:rgb(255,93,91);
+    font-size: 20px;
+    float:center;
+    margin:0 auto;
+}
+
+#store input[type=text],
+#store input[type=number] {
+    display: block;
+    margin: 10px auto 0 auto;
+    font-size: 14px;
+}
+
+#store input[type=submit] {
+    font-size: 24px;
+    background: rgb(255,93,91);
+    color: white;
     display: inline-block;
-    color: rgb(240,217,210);
-    
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
-
-table.altrowstable {
-border: 5px, solid black;
+#store p {
+    margin: 0 0 50px 0;
 }
