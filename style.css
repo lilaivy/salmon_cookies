@@ -146,6 +146,16 @@ p:first-letter{
     border: none;
 }
 
+#new_store input[type = 'submit']{
+font-size: 24px;
+    background: rgb(255,93,91);
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
 #store p {
     margin: 0 0 50px 0;
 }
