@@ -37,6 +37,14 @@ Store.prototype.dailyProjection = function(){
 
 };
 
+Store.prototype.hourlyProjection = function(){
+  for(var i = 0; i < this.cookiesArray.length; i++){
+    for (var j = 0; j < this.name.length; j++){
+      this.cookiesArray[i] + this.name [j];
+      console.log(Store.hourlyProjection());
+    }
+  }
+};
 //fetches table element in html, creates text for new node, and appends new node onto table element for store name.
 Store.prototype.renderTableData = function(){
   var tableElement = document.getElementById('dailyProjections');
@@ -101,7 +109,7 @@ alki.dailyProjection();
 
 
 //creats new row in table to insert cookies per hour header
-var hours = ['','6am ','7am: ','8am ','9am ','10am: ','11am: ','12pm ', '1pm ', '2pm ','3pm ','4pm ','5pm ','6pm ', '7pm ','8pm ', 'Daily Totals'];
+var hours = ['','6am ','7am ','8am ','9am ','10am ','11am ','12pm ', '1pm ', '2pm ','3pm ','4pm ','5pm ','6pm ', '7pm ','8pm ', 'Daily Totals'];
 var tableElement = document.getElementById('dailyProjections');
 
 var renderHeader = function(){
