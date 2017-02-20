@@ -20,27 +20,41 @@
             </ul> 
         </nav>
 
-        <div class = "store_pics">
-            <form>
-            <img id ="shirt" src = "https://github.com/cfpdx-201d7/class/blob/master/class-09-css_wireframe_part_1/lab/assets/shirt.jpg?raw=true">
+        <div class = "container">
+            <form id="store">
+
+                <div class="product">
+                    <img id ="shirt" src = "https://github.com/cfpdx-201d7/class/blob/master/class-09-css_wireframe_part_1/lab/assets/shirt.jpg?raw=true">
+                    <input size = "shirt_size" placeholder = "T-shirt Size Here:" type = "text">
+                    <p>Get Your very own Seattle Salmon t-shirt</p>
+                </div>
+
+                <div class="product">
+                    <img src = "https://github.com/cfpdx-201d7/class/blob/master/class-09-css_wireframe_part_1/lab/assets/frosted-cookie.jpg?raw=true">
+                    <input dozens = "cookie_order" placeholder = "Order Cookies here:" type = "number" min = 12>
+                    <p>Order a dozen cookies shipped straight to you!</p>
+                </div>
+
+                <div class="product">
+                    <img src = "https://github.com/cfpdx-201d7/class/blob/master/class-09-css_wireframe_part_1/lab/assets/cutter.jpeg?raw=true">
+                    <input cutter = "cookie_order" placeholder = "Order Cookie Cutter:" type = "number" min = 0>
+                    <p>Make your own Salmon Cookies at home!</p>
+                </div>
+
+                <div class="product">
+                    <img src = "https://github.com/cfpdx-201d7/class/blob/master/class-09-css_wireframe_part_1/lab/assets/chinook.jpg?raw=true">
+                    <input print = "salmon_print" placeholder = "Order Print:" type = "number" min = 0>
+                    <p>Order a limited addition hand-painted Chanook print</p>
+                </div>
+
+                <div class="product">
+                    <img src = "https://raw.githubusercontent.com/cfpdx-201d7/class/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png">
+                    <input print = "salmon_print2" placeholder = "Order Print:" type = "number" min = 0>
+                    <p>Order a limited addition hand-painted logo print</p>
+                </div>
+
+                <input type="submit" value="Buy now" />
+            </form>
         </div>
-        <input size = "shirt_size" placeholder = "T-shirt Size Here:" type = "text"><p>Get Your very own Seattle Salmon t-shirt</p>
-        <div id="merch_pic">
-        <img src = "https://github.com/cfpdx-201d7/class/blob/master/class-09-css_wireframe_part_1/lab/assets/frosted-cookie.jpg?raw=true">
-        <input dozens = "cookie_order" placeholder = "Order Cookies here:" type = "number" min = 12><p>Order a dozen cookies shipped straight to you!</p>
-        </div>
-        <div id="merch_pic">
-            <img src = "https://github.com/cfpdx-201d7/class/blob/master/class-09-css_wireframe_part_1/lab/assets/cutter.jpeg?raw=true"> <input cutter = "cookie_order" placeholder = "Order Cookie Cutter:" type = "number" min = 0><p>Make your own Salmon Cookies at home!</p>
-        </div>
-         <div id="merch_pic">
-            <img src = "https://github.com/cfpdx-201d7/class/blob/master/class-09-css_wireframe_part_1/lab/assets/chinook.jpg?raw=true"> <input print = "salmon_print" placeholder = "Order Print:" type = "number" min = 0><p>Order a limited addition hand-painted Chanook print</p>
-        </div>
-        <div id="merch_pic">
-            <img src = "https://raw.githubusercontent.com/cfpdx-201d7/class/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png"> <input print = "salmon_print2" placeholder = "Order Print:" type = "number" min = 0><p>Order a limited addition hand-painted logo print</p>
-        </div>
-        </form>
-        </div>
-    
-     <script type="text/javascript" src= "app.js"></script>
     </body>
 </html>

@@ -24,6 +24,12 @@ tr.hover{
     background-color:darkgray;
 }
 
+.container{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
 
 body{
     width:90%;
@@ -48,6 +54,10 @@ width:200px;
   float: left;
 }
 
+img{
+    max-width: 100%;
+}
+
 nav{
     text-decoration: none;
     color:rgb(255,93,91);
@@ -57,13 +67,21 @@ nav{
    
 }
 
+a{
+    text-decoration:none;
+    color:rgb(255,93,91);
+    display:inline-block;
+
+}
+
 ul{
     text-decoration:none;
     color:rgb(255,93,91);
     display:inline-block;
 }
 
-li{
+
+ li{
   text-decoration:none;
     color:rgb(255,93,91);
     display:inline-block;
@@ -71,12 +89,16 @@ li{
      padding-left: 10px;
 }
 
+li:first-child{
+    border-left:none;
+}
+
 img{
     float:clear;
 }
 
 
-p::first-letter{
+p:first-letter{
     font-size: 200%;
     font-family: Georgia, 'Times New Roman', Times, serif
 }
@@ -91,10 +113,30 @@ p::first-letter{
     float:center;
 }
 
-#nav_footer li{
-    
+#nav_footer li{    
     color:rgb(255,93,91);
     font-size: 20px;
     float:center;
     margin:0 auto;
+}
+
+#store input[type=text],
+#store input[type=number] {
+    display: block;
+    margin: 10px auto 0 auto;
+    font-size: 14px;
+}
+
+#store input[type=submit] {
+    font-size: 24px;
+    background: rgb(255,93,91);
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+#store p {
+    margin: 0 0 50px 0;
 }
